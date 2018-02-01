@@ -1,0 +1,30 @@
+It is faster than sRead.
+
+l1a0b@lulu:a8$ time ./aRead 10
+10
+
+real	0m0.015s
+user	0m0.012s
+sys	0m0.000s
+l1a0b@lulu:a8$ time ./aRead 100
+85328
+
+real	0m0.014s
+user	0m0.012s
+sys	0m0.000s
+l1a0b@lulu:a8$ time ./aRead 1000
+151168
+
+real	0m0.014s
+user	0m0.008s
+sys	0m0.004s
+l1a0b@lulu:a8$ time ./aRead 10000
+46029305
+
+real	0m0.024s
+user	0m0.016s
+sys	0m0.004s
+
+
+With aRead, 10 to 1000, the real time is the same. It only gets a tiny bit slower at 
+10000. Its still super fast. Faster than sRead. 

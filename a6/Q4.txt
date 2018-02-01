@@ -1,0 +1,4 @@
+a) List each of the memory accesses that stack makes that regs doesn’t make bygiving their line numbers.
+10, 12, 22, 23
+b) How many more memory accesses does stack make, compared to regs?
+4

@@ -1,0 +1,26 @@
+l1a0b@lulu:a8$ time ./tRead 10
+10
+
+real	0m0.019s
+user	0m0.008s
+sys	0m0.008s
+l1a0b@lulu:a8$ time ./tRead 100
+85328
+
+real	0m0.075s
+user	0m0.000s
+sys	0m0.072s
+l1a0b@lulu:a8$ time ./tRead 1000
+151168
+
+real	0m0.576s
+user	0m0.004s
+sys	0m0.568s
+l1a0b@lulu:a8$ time ./tRead 10000
+46029305
+
+real	0m23.286s
+user	0m0.040s
+sys	0m23.228s
+
+So looking at the results, we can see that aRead is faster than tRead. One of the reason tRead is slower is because of the joining process. It needs to wait for threads to complete first and join everything together and that itself consume a lot of time.  

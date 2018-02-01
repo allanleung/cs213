@@ -1,0 +1,32 @@
+a) List the lines of foo and b that allocate b’s stack frame.
+   7-8 and 20-21
+b) List the lines of foo and b that de-allocate b’s stack frame.
+   15-16 and 30-31
+
+c) List the changes required in b to add the arguments and locals; note that you do not actually use these new variables in any way.
+
+Replace 20 with:
+ld   $0xffffffec, r0
+Replace 22 with:
+st   r6, 0x10(r5)
+Replace 23 with:
+ld   0x14(r5), r0
+Replace 25 with:
+ld   0x18(r5), r0
+Insert after 26:
+ld 0x1c(r5), r0
+st r0, 0x8(r5)
+Replace 29 with:
+ld   0x10(r5), r6
+Replace 30 with:
+ld   $0x14, r0
+
+d) List the changes required in foo to call b(0,1,2).
+
+Replace 7 with:
+ld   $0xfffffff4, r0
+Replace 15 with:
+ld   $0xc, r0
+Insert after 12:
+ld 0x2, r0
+st r0, 0x8(r5)

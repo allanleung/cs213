@@ -1,0 +1,12 @@
+The initial problem was pop was freeing the element and trying to return e->name
+
+Secondly, main() was allocating a char pointer to W and pop, which returns a string.
+
+Pop was constantly free(e), leaving all the elements dangling.
+
+I solved it by first allocating a space in main that is static, which temporary holds the char
+
+Then pass a char pointer in pop and have the main return the char instead of the pop function.
+
+I change the pop function to return void and change the return statement to nothing. 
+

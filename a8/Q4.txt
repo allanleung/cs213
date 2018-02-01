@@ -1,0 +1,43 @@
+Producer wait: 838
+Consumer wait: 0
+items 0 count 1
+items 1 count 2
+items 2 count 2
+items 3 count 2
+items 4 count 2
+items 5 count 2
+items 6 count 2
+items 7 count 58
+items 8 count 68
+items 9 count 336
+items 10 count 325
+
+Producer is often times waiting and consumer is consuming. 
+
+In the code, the item at 10 got count 325 times, that means the buffer is always full. Which is a good thing. Producer is always waiting and the consumer is consuming the items super fast! The buffer remains at 10 most of the time.
+
+I notice that if I change the main statement around, consumer run first then producer.
+
+  for (int i=0; i< NUM_CONSUMERS; i++) {
+    consumer_threads[i] = uthread_create(&consumer, NULL);
+  }
+
+  for (int i=0; i< NUM_PRODUCERS; i++) {
+    producer_threads[i] = uthread_create(&producer, NULL);
+  }
+
+Producer wait: 0
+Consumer wait: 848
+items 0 count 335
+items 1 count 343
+items 2 count 33
+items 3 count 33
+items 4 count 17
+items 5 count 15
+items 6 count 12
+items 7 count 9
+items 8 count 3
+items 9 count 0
+items 10 count 0
+
+Now the main code is swap, I notice completely opposite. The producer never wait and the consumer is always waiting. Which means the second sometime is produce, it gets consumed. 

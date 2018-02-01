@@ -1,0 +1,39 @@
+Hi,
+
+So basically I try to test every function so I went down the list and just played with all the assembly language.
+
+First I load immediate
+Then I load values from memory to register, so I can have numbers to play around with. I added values with base 2, 
+
+IE, 1 2 4 8 16 32 ….
+
+Then I test load int 10 into r2
+ld $0x0A, r2
+
+Then I made load indexed from memory to see if it works and put it on r3
+ld (r0,r2,4), r3
+
+Then I test load index, store base and store indexed 1 by 1
+
+Going to 2000, take the value of 10 from r2, go down the memory take take the 10+1 and put int into r3
+ld (r0,r2,4), r3
+
+
+st r4,4(r1)
+
+st r2, (r0,r2,4)
+
+Finally
+
+I just tested all the add, and inc +1, increase by 4, dec, decrease by 4, not and bit shifting. I used the values I grab from my memory to register and edit 
+
+Since all the register value are around base 2, shifting and adding was easy to spot using the Simple Machine 213. 
+
+That is how I tested everything and it all worked in the simple machine 213.
+
+
+
+
+
+
+

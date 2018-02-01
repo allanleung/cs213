@@ -1,0 +1,81 @@
+Testing my program: 
+
+l1a0b@bowen:a1$ java Endianness ff 00 00 00
+Memory Contents
+  Addr   Value
+    0:   0xff
+    1:   0x0
+    2:   0x0
+    3:   0x0
+The big    endian integer value at address 0 is -16777216
+The little endian integer value at address 0 is 255
+
+l1a0b@bowen:a1$ java Endianness 00 00 00 ff
+Memory Contents
+  Addr   Value
+    0:   0x0
+    1:   0x0
+    2:   0x0
+    3:   0xff
+The big    endian integer value at address 0 is 255
+The little endian integer value at address 0 is -16777216
+
+l1a0b@bowen:a1$ java Endianness 01 02 03 04
+Memory Contents
+  Addr   Value
+    0:   0x1
+    1:   0x2
+    2:   0x3
+    3:   0x4
+The big    endian integer value at address 0 is 16909060
+The little endian integer value at address 0 is 67305985
+
+l1a0b@bowen:a1$ java Endianness 04 03 02 01
+Memory Contents
+  Addr   Value
+    0:   0x4
+    1:   0x3
+    2:   0x2
+    3:   0x1
+The big    endian integer value at address 0 is 67305985
+The little endian integer value at address 0 is 16909060
+
+l1a0b@bowen:a1$ java Endianness 01 01 01 01
+Memory Contents
+  Addr   Value
+    0:   0x1
+    1:   0x1
+    2:   0x1
+    3:   0x1
+The big    endian integer value at address 0 is 16843009
+The little endian integer value at address 0 is 16843009
+
+l1a0b@bowen:a1$ java Endianness ff ff ff ff
+Memory Contents
+  Addr   Value
+    0:   0xff
+    1:   0xff
+    2:   0xff
+    3:   0xff
+The big    endian integer value at address 0 is -1
+The little endian integer value at address 0 is -1
+
+l1a0b@bowen:a1$ java Endianness 80 00 00 00
+Memory Contents
+  Addr   Value
+    0:   0x80
+    1:   0x0
+    2:   0x0
+    3:   0x0
+The big    endian integer value at address 0 is -2147483648
+The little endian integer value at address 0 is 128
+l1a0b@bowen:a1$ java Endianness 00 00 00 80
+Memory Contents
+  Addr   Value
+    0:   0x0
+    1:   0x0
+    2:   0x0
+    3:   0x80
+The big    endian integer value at address 0 is 128
+The little endian integer value at address 0 is -2147483648
+

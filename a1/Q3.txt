@@ -1,0 +1,6 @@
+3) 01 02 02 01 
+
+In little endian, its 01 02 02 01
+In big endian, its 01 02 02 01
+
+If you divided the hex in half and they mirror each other. So if the first 2 byte are the reverse second. Then they are the same little / big endian representation.

@@ -1,0 +1,8 @@
+a) S7-static-call-stack uses a stack to keep track of the return pointers. 
+   S7-static-call-regs just keeps the return pointer in a register.
+
+b) The stack allows for more complex programs. Other methods or function can also use the value in the stack if they wish
+   The stack also has more space than if the computer have lots of memory where as reg only has 8.
+
+c) Register is more efficient for small programs since it doesn't require an extra read and write to memory. 
+   Register is also faster than memory.

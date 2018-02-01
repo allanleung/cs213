@@ -1,0 +1,7 @@
+So from my understanding, element_t is used everywhere. 
+
+This makes it impossible to know who is using since it gets called everywhere.
+
+I fixed by adding the int reference in the struct, finished the two function inc_ref
+and dec_ref. I went to list.h, follow the instruction on where to add inc_ref and 
+dec_ref to the code. 
